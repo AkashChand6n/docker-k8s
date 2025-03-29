@@ -1,6 +1,6 @@
 FROM openjdk:11-jdk-slim
 RUN mkdir /usr/local/tomcat
-RUN wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.102/bin/apache-tomcat-9.0.102.tar.gz -O /tmp/tomcat.tar.gz
+RUN wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.102/bin/apache-tomcat-9.0.102.tar.gz -o /tmp/tomcat.tar.gz
 RUN cd /tmp && tar xvfz tomcat.tar.gz
 RUN cp -Rv /tmp/apache-tomcat-9.0.102/* /usr/local/tomcat/
 COPY target/HelloWorld-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
