@@ -1,4 +1,7 @@
 FROM openjdk:11-jdk-slim
+RUN apt-get update && \
+    apt-get install -y wget && \
+    rm -rf /var/lib/apt/lists/*
 RUN mkdir /usr/local/tomcat
 RUN wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.102/bin/apache-tomcat-9.0.102.tar.gz -o /tmp/tomcat.tar.gz
 RUN cd /tmp && tar xvfz tomcat.tar.gz
